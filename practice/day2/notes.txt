@@ -1,0 +1,21 @@
+# 데이터에 대한 자료의 크기
+1) computer에 대한 자료 크기 : bit → byte → field → record → file → database → database bank → database warehouse
+2) 데이터베이스 측면 크기: bit → byte → field(item, attribute, column) → tuple(row) → table
+
+# 자료형, 출력에 대한 형식
+%d : 정수
+%f : 실수
+%s : 문자열
+%c : 문자열
+print("%d %d %d" %(변수1, 변수2, 변수3))
+
+# 출력을 강화시키기 위한 함수
+end = "" : 다음줄로 바뀐 출력을 앞줄로 붙여서 출력
+sep = " " : 변수에 의해 공백을 특별한 구분자로 출력 ex) 서울 부산 => 서울, 부산
+
+print("*" * 5) : 특별한 출력에 대해 표시한 숫자만큼 반복출력
+print(str[index]) : 문자열에 틀별한 위치번째 값을 출력 :: 자료형 인덱싱, 슬라이싱
+print("" + "") : 문자열 이어서 출력
+print("" + \n + "") : 문자열 줄바꿈 출력
+
+print(
