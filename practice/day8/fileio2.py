@@ -16,6 +16,8 @@ try:
     file1_write = open('../file_processing/flower_w.txt', 'w', encoding='utf-8')
     flowers = file1_read.readlines()
     for flower in flowers:
+        # file1_write.write(flower.upper())
+        # 그냥 이대로 써도 되지만, 개행이나 공백 문자를 확실히 없애기 위해 strip() 추가
         file1_write.write(flower.strip().upper() + "\n")
     file1_read.close()
     file1_write.close()
