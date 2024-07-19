@@ -65,3 +65,4 @@ arr=np.array([1.0,2.0,3.0],int)
 1. dtype = np.자료형 : 원소를 만들면서 형을 변환
 2. astype : 이미 만들어진 원소의 자료형을 바꿀때
    astype=np.자료형
+   ex) fdtype ==> np.float

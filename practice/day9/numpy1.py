@@ -16,6 +16,11 @@ print(arr1)
 #  [4 5 6]
 #  [7 8 9]]
 
+for i in range(3):      # 3행
+    for j in range(3):  # 3열
+        print(num1[i][j], end="")
+    print()
+
 #  배열(행,열)의 길이를 자동으로 인식
 for i in range(len(num1)):
     for j in range(len(num1[i])):
