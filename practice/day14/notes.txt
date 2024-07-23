@@ -1,0 +1,64 @@
+7/23
+# 진단 테스트 및 복습
+unique() 함수를 이용하여 개수 구하기
+변수1, 변수2 = np.unique(객체, return_counts=True)
+
+## 외부 데이터 보내기
+- 완성된 df 데이터프레임 파일을 엑셀로 보낸 후, 엑셀에서 문서를 예쁘게 완성할 수 있도록 합니다
+1. df 데이터 프레임을 엑셀로 보내기 : 확장자 xlsx
+df.to_excel("파일경로\\파일명", index=T/F, sheet_name="", encoding="utf-8")
+
+# ==================================================
+
+## Web Programming
+모든 태그는 <>로 시작해서 </>로 끝냅니다
+
+# html 기본적인 구성
+1. <html> : 문서의 시작
+2. <head><title> 문서의 제목 </title></head>
+3. <body> 본문 내용을 기입 </body>
+
+# 글자의 크기
+<h1> ~ <h6> : 주로 글자의 제목 크기를 사용
+<font size=__> 본문에서 글자의 크기를 조정할때 사용</font>
+    * font 에서는 글자의 색상, 글꼴등도 표기가 가능
+
+# 수평선
+<hr>
+hr 옵션에서는 size 옵션을 통해 굵기 표기가 가능하며, 색깔도 가능
+size=10, color="blue"
+
+# 줄간격 주기
+<p>
+<br>
+
+# 정렬하기
+<center> : center를 주게되면 전체적으로 가운데 정렬이 일어남
+<p align="left"> : 해당 문단 전체를 왼쪽 정렬
+<p align="right"> : 해당 문단 전체를 오른쪽 정렬
+<p align="center"> : 해당 문단 전체를 가운데 정렬
+
+# 글자 강조하기
+<em><i> : 이탤릭 italic
+<strong><b> : 진하게 bold
+<u> : 밑줄 underline
+<mark> : 형광색 강조
+<sup> : 윗첨자 superscript
+<sub> : 아랫첨자 subscript
+
+# 특수문자
+&nbsp : 공백주기
+&lt : <
+&rt : >
+
+# 번호없는 목록
+<ul>
+    <li>항목</li>
+    <li>항목</li>
+</ul>
+
+# 번호있는 목록
+<ol>
+    <li>항목</li>
+    <li>항목</li>
+</ol>
