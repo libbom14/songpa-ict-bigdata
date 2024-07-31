@@ -1,0 +1,78 @@
+7/30
+
+4. 중복 데이터 개수를 구하는 명령은?
+- df.duplicated().sum()
+5. 결측치 개수를 구하는 명령은?
+- df.isnull().sum()
+6. 결측치 값을 대체하는 함수를 정리해 보세요
+- .mean() : 평균으로 대체
+- .median() : 중앙값(중위수)로 대체
+- .mode() : 최빈값(최빈수)로 대체
+7. 데이터프레임 데이터를 요약하여 데이터 통계를 한 눈에 파악하는 함수는?
+- df.info
+- df.describe
+- df.describe()
+8. 데이터를 행(index)과 열(column) 단위로 특정한 함수를 이용하여 그룹으로 요약하여 보여지는 명령은?
+- pivot_table
+
+<<실습>> pandas 전처리 응용
+<<응용>> 국어(kor) 과목과 영어(eng) 과목이 모두 85점인 데이터를 과감히 삭제해주세요.
+
+[ 순위 구할 때 동점 처리하는 5가지 방법 ]
+method='average' : 평균 / 동점 관측치 간의 그룹 내 평균 순위 부여 (default 설정)
+method='min' : 최소값 / 동점 관측치 그룹 내 최소 순위 부여
+method='max' : 최대값 / 동점 관측치 그룹 내 최대 순위 부여
+method='first' : 첫번째값 / 동점 관측치 중에서 데이터 상에서 먼저 나타나는 관측치부터 순위 부여
+method='dense' : 조밀하게 / 최소값('min')과 같은 방법으로 순위부여하나, 'min'과는 다르게 그룹 간 순위가 '1'씩 증가함 (like ‘min’, but rank always increases by 1 between groups)
+
+<<응용>> 최종 데이터 grade_report를 excel로 보내보자. 단, index는 생성하지 않고, sheet_name='grade'로
+grade_report.to_excel("grade_report.xlsx", index=False, sheet_name='grade')
+
+# ==================================================
+
+## 시각화
+시각화를 위한 라이브러리 import하기
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+plt.rcParams['font.family']='malgun gothic'
+
+# 차트 종류
+plt.line
+plt.bar
+plt.barh
+plt!t.pie
+plt.hist
+
+# 챠트 영역
+1. 그래프 영역 크기 설정
+- plt.figure(figsize=(행,열))
+2. 각종 그래프 작성 옵션
+- plt.legend() : 범례표시
+    - loc : 위치
+        Location String   Location Code
+        ===============   =============
+        'best'            0
+        'upper right'     1
+        'upper left'      2
+        'lower left'      3
+        'lower right'     4
+        'right'           5
+        'center left'     6
+        'center right'    7
+        'lower center'    8
+        'upper center'    9
+        'center'          10
+        ===============   =============
+- plt.title("제목", fontsize=20)
+- plt.show() : 챠트 표시하기
+color=)
+
+챠트 제목 표시
+○ 챠트 저장
+nIt fig cavof savefig(폴더 ia( 포고 및미 저장파일 저착파의j dpi=  png나 jpg로 저장
+
+# visualization1
+# page 249
+# page 252
