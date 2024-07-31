@@ -8,31 +8,47 @@ file-save as- 쉼표로 분리(.csv) - 저장할 위치 선택
 
 # page 291
 ## 데이터 프레임 공백 데이터
-np.Nan
-None
+- N/A : Not Available, 사용하지 않는 값
+- NaN : Not a Number, 숫자가 아닌 데이터
+- None : 아무것도 없는 빈값
 
 ## 전처리 함수
-df.isnull()
-df.isna()
-df.notnull()
+- df.isnull() : 관측치가 결측이면 True, 결측이 아니면 False의 boollean 값을 반환
+- df.isna() : == isnull()
+- df.notnull() : 관측치가 결측이면 False, 결측이 아니면 True를 반환 <-> isnull()
+- df.notna() : == notnull()
 
 df.isnull().sum() : 결측치 개수를 구함
-df.isna().sum() :
-df.notnull().sum() :
+df.isna().sum() : 결측치 개수를 구함
+df.notnull().sum() : 결측값이 아닌 값의 개수
 
 <<실습>>
 index5에 아래와 같은 데이터를 임의로 삽입하여 중복데이터를 만들어보자
 강감찬 90 90 70
 
+* 데이터 타입 확인
+df.dtypes
+int : 정수형
+float : 실수
+object :문자형
+
 ## 중복데이터 조회
 df.duplicated(keep=False)
-1) keep: 전체 조회
+1) keep: {‘first’, ‘last’, False}
+    default ‘first’
+    표시할 중복 항목(있는 경우)을 결정합니다.
+    - 'first' : 첫 번째 발생을 제외하고 중복을 표시
+    - 'last' : 마지막 항목을 제외하고 중복 항목을 표시
+    - False : 모든 중복을 True 으로 표시
 
 ## 데이터 삭제
-1) df.dropna(how=' ', axis=0/2)
-how=any를 주면 하나라도 공백이 있는 데이터를 삭제
-2) how=all를 주면 하나라도 전체공백이 있는 데이터를 삭제
-이때 행과 열에 대해서 axis를 통해 지정하면 좀 더 세부적인 데이터에 접근하여 삭제할 수 있다
+# df.dropna 기본 사용법
+    df.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
+1) df.dropna(how=' ', axis=0/1)
+    how=any : 하나라도 공백이 있는 데이터를 삭제
+2) how=all : 모두 결측치면 제거
+    * 이때 행과 열에 대해서 axis를 통해 지정하면 좀 더 세부적인 데이터에 접근하여 삭제할 수 있다
+    axis = {0: index / 1: columns} 결측치 제거를 진행 할 레이블
 
 3) df.dropna(subset='열이름') : 열이름과 동일한 컬럼을 찾아 공백이 있는 데이터는 삭제한다
 4) df.dropna(thresh='숫자', axis=행/열) : 삭제할 행/열에 대해서 숫자 이상의 데이터는 남기고 나머지에 대해서 삭제
@@ -46,16 +62,23 @@ df.duplicates(keep='False', ignore_index=True, inplace=True)
     - 'last': 마지막에 위치한 것 빼고 모두 지움
     - False: 모두 다 지움
 
+쉽게 풀이하면,
+duplicated : 중복인지 판별 True/False,
+drop_duplicates : 중복 데이터 drop, 제거.
+
+keep : 중복 데이터에 대해 유지할 것인지 옵션을 줌.
+    first(첫번째 유지&유효, 나머지 무효) / last(마지막 유지&유효, 나머지 무효) / False(전부 중복, 무효)
+
 <<응용>> df_backup 데이터프레임을 df에 복사한 후, 마지막 데이터는 남기고 나머지 삭제
 
 ## 데이터 대체
 df['특정열'] = fillna(df['특정열'].적용할 함수())
 1) 특정열을 0으로 대체하기
-df['특정열'].fillna(0)
+    - df['특정열'].fillna(0)
 2) 대체값으로 많이 사용하는 함수
-mean() : 평균값
-median() : 중위수
-mode() : 최빈수
+    - mean() : 평균값
+    - median() : 중위수
+    - mode() : 최빈수
 
 <<실습>> 열 kor에 결측치 값에 0 부여
 <<실습>> 열 mat에 결측치 값에 평균값 부여
@@ -91,6 +114,9 @@ msno.matrix()
 <<응용>> # 응용2. 4과목(글로컬영어, 알고리즘, 자료구조, PYTHON) 점수가 모두 80점 이상인 데이터를 조회
 <<응용>> # 응용3. 성명이 김씨 성을 가진 사람을 조회
        # HINT df['성명'].str.contains('김')
+💡startswith() : 시작 문자열이 지정된 문자와 같은지 True / False 형식(bool)으로 반환
+💡endswith() : 끝 문자열이 지정된 문자와 같은지 True / False 형식(bool)으로 반환
+💡contains() : 문자열 열에 특정 단어나 패턴이 포함되어 있는지 True / False 형식(bool)으로 반환
 
 ## ==================================================
 
