@@ -1,5 +1,11 @@
 7/30
-
+# 복습
+1. 중복 데이터를 조회하는 명령은?
+- df.duplicated(keep=False)
+2. 데이터를 삭제할 때 하나라도 결측 값이 있으면 데이터를 삭제하는 명령은?
+- df.dropna(how='any')
+3. 'kor' 과목에 중복 데이터가 있는지를 검사하는 명령은?
+- df['kor'].duplicate(keep=False)
 4. 중복 데이터 개수를 구하는 명령은?
 - df.duplicated().sum()
 5. 결측치 개수를 구하는 명령은?
@@ -39,11 +45,12 @@ import pandas as pd
 plt.rcParams['font.family']='malgun gothic'
 
 # 차트 종류
-plt.line
-plt.bar
-plt.barh
-plt!t.pie
-plt.hist
+plt.line : 선 그래프
+plt.bar : 막대 그래프
+plt.barh : 가로막대 그래프
+plt.pie : 파이
+plt.hist : 히스토그램
+* https://matplotlib.org/stable/plot_types/index.html
 
 # 챠트 영역
 1. 그래프 영역 크기 설정
@@ -65,13 +72,24 @@ plt.hist
         'upper center'    9
         'center'          10
         ===============   =============
+3. 챠트 제목 표시
 - plt.title("제목", fontsize=20)
-- plt.show() : 챠트 표시하기
-color=)
+4. 챠트 표시하기
+- plt.show()
 
-챠트 제목 표시
+** 꺾은선 그래프에 마크(모양) 넣기
+*, +, ^, ㅇ
+https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers
+
+** add_subplot() : 하나의 그래프 영역을 추가하여 다른 그래프와 비교할 수 있도록 동시에 그래프 표시하는 목적
+
+# 원 그래프 꾸미기
+explode=[비율1,비율2,비율3] : 분할된 그래프를 돌출 형태의 그래프로 표현
+shadow=True : 그림자, 3D 입체형으로 표시
+
 ○ 챠트 저장
-nIt fig cavof savefig(폴더 ia( 포고 및미 저장파일 저착파의j dpi=  png나 jpg로 저장
+plt.savefig(폴더 및 저장파일) : png나 jpg로 저장
+    - dpi 옵션 : 저장할 이미지의 해상도를 지정
 
 # visualization1
 # page 249
