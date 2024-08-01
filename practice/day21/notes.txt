@@ -4,3 +4,12 @@
 8/7 ~ 8/14 5일간 : MySQL 기반 데이터베이스 / 고정림 교수
 8/16 ~ 8/23 6일간 : Power BI 시각화 / 김현정 교수
 8/26 ~ 8/29 : 팀 프로젝트, 8/28 PT 발표, 8/29 시상식
+
+** 자본금 통계함수에서 숫자가 지수 형태로 출력될 때
+ => pd.options.display.float_format='{:.5f}'.format
+
+** 그래프에 패턴 넣기
+- plt.bar(x, y, color, alpha, edgecolor, linewidh, linestyle, hatch....)
+  ① hatch= '/' | '\\' | '*'
+    hatch 빗금은 하나를 주면 간격 폭이 넓어지므로
+    개수를 추가하게 되면 촘촘하게 해치 패턴 효과를 가져올수 있음
