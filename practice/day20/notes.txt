@@ -1,6 +1,69 @@
 7/31
+** 내일 종강 수업 안내
+1. 내일은 전체 summary 진단평가(오늘 수업과 비슷한 유형의 공공데이터
+   분석으로 마무리 수업을 진행하도록 하겠습니다.)
+
 # 복습
+1. 챠트를 사용하기 위한 import시키는 명령
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    plt.rcParams['font.family']='malgun gothic'
 
+2. 차트 영역을 표시하기 위한 명령은?
+    plt.figure(figsize(12,8))
 
-# ==================================================
+3. 배경색을 지정하는 명령은?
+    facecolor="blue"
 
+4. 원 그래프에서 3D 입체형으로 표시하기 위한 명령은?
+    shadow=True
+
+5. 챠트를 출력하는 명령은?
+    plt.show()
+
+6. 차트를 저장하는 명령은?
+    plt.savefig("폴더 및 파일명.png")
+
+7. 차트 범례를 나타내기 위한 옵션은?
+    legend(loc="upper right")
+
+** pie(원) 그래프를 구성하기 위한 필수 요소
+1. 범위 : 수치적 데이터(이 데이터를 기반으로 원 그래프가 그려짐)
+2. 레이블 : 문자열 데이터
+    label = [라벨1, 라벨2, 라벨3...]
+    labels=label
+3. 색상 구성
+    color=['red','yeloow','blue','green']
+4. 챠트 만들기 위한
+    autopct="%.2f%%", 레이블, 색상
+5. 제목 : 챠트 제목
+    plt.title()
+6. 그래프 출력
+    plt.show()
+
+** seaborn 그래프
+sns.set_theme(style="whitegrid") : 배경색
+sns.set_style("배경색") : 배경색
+sns._____ : (x=" ", y=" ", data=df)
+plt.show()
+
+1. searbon에서 가로막대를 그리고자 할 때는 세로 막대 그래프에서 orient="h" 옵션을 추가하게
+ 되면 수평가로막대로 전환할 수 있다. 이때 중요한 것은 x,y축에 대한 데이터를 변경하는 것도
+ 잊지 말아주세요.
+
+2. 에러바(수직선) 없애기 : errwidth=0
+
+3. seaborn에서 제공하는 palette
+   pastel
+   coolwarm
+   bright
+   muted
+
+<<응용>>
+   ∙그래프 종류 : plot(꺾은선 그래프)
+   ∙그래프 크기 : 가로 너비 : 12, 세로 길이 : 8
+   ∙x축 label 제목 : 영화 배급사, 글자크기 18
+   ∙y축 label 제목: 스크린수, 글자크기 18
+   ∙그래프 제목 : 흥행 영화 순위 Top 5, 글자색 : 보라
+   ∙선 스타일 : :
+   ∙마커 표시 : '+'
