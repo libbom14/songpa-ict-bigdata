@@ -1,13 +1,14 @@
 /*Ch03 예제*/
 /*예제3-1*/
-SELECT CHAR_LENGTH('HELLO')
-     , LENGTH('HELLO')
-     , CHAR_LENGTH('안녕')
-     , LENGTH('안녕');
+SELECT CHAR_LENGTH('HELLO') -- 영문자 개수
+     , LENGTH('HELLO')      -- 영문자 바이트 수
+     , CHAR_LENGTH('안녕')   -- 문자 개수
+     , LENGTH('안녕');        -- UTF-8의 바이트 수
 
 /*예제3-2*/
-SELECT CONCAT('DREAMS', 'COME', 'TRUE')
-     , CONCAT_WS('-', '2023', '01', '29');
+/*CONCAT = CONCATENATE*/
+SELECT CONCAT('DREAMS', 'COME', 'TRUE') -- 문자열 연결
+     , CONCAT_WS('-', '2023', '01', '29');  -- 문자열을 구분자 '-'로 연결
 
 /*예제3-3*/
 SELECT LEFT('SQL 완전정복', 3)
@@ -119,22 +120,3 @@ SELECT CAST('1' AS UNSIGNED)
      , CAST(2 AS CHAR(1))
      , CONVERT('1', UNSIGNED)
      , CONVERT(2, CHAR(1));
-
-/*예제3-23*/
-SELECT IF(12500 * 450 > 5000000, '초과달성', '미달성');
-
-/*예제3-24*/
-SELECT IFNULL(1, 0)
-     , IFNULL(NULL, 0)
-     , IFNULL(1 / 0, 'OK');
-
-/*예제3-25*/
-SELECT NULLIF(12 * 10, 120)
-     , NULLIF(12 * 10, 1200);
-
-/*예제3-26*/
-SELECT CASE
-           WHEN 12500 * 450 > 5000000 THEN '초과달성'
-           WHEN 2500 * 450 > 4000000 THEN '달성'
-           ELSE '미달성'
-           END;
