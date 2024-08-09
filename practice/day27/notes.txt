@@ -1,0 +1,7 @@
+8/9
+구문 처리 순서
+FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY
+
+WHERE 절에서는 집계함수 사용 X
+SELECT 앞에서 alias(별칭) 사용 X
+ORDER BY 절에서는 다 사용 O
