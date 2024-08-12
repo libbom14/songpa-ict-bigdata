@@ -1,0 +1,31 @@
+8/12
+구문 처리 순서
+FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY
+
+WHERE 절에서는 집계함수 사용 X
+SELECT 앞에서 alias(별칭) 사용 X
+ORDER BY 절에서는 다 사용 O
+
+## JOIN 종류
+1. Cross Join(Cartesian Product) : 모든 가능한 쌍이 나타남
+2. Outer Join : Join 조건을 만족하지 않는 튜플(짝이 없는 튜플)도 Null과 함께 나타남
+3. Non-Equi Join : 조건에 의한 조인
+4. Equi Join : Theta Join & 조건이 Equal(=)
+5. Self Join : 자기 자신과 조인
+
+# ANSI 조인
+- FROM 절에 있는 두 테이블명 사이에 조인 종류에 따라 CROSS, INNER, OUTER와 함께 JOIN 키워드를 넣어준다
+- 조인에 대한 조건은 ON 절에 작성하고 나머지 조건은 WHERE 절에 작성
+e.g) SELECT * FROM 테이블A
+        (CROSS|INNER|OUTER) JOIN 테이블B
+        ON 조인 조건
+     WHERE 기타 조건;
+# Non-ANSI 조인
+- 테이블을 comma(,)로 구분하여 FROM 절에 작성
+- 조인 조건과 기타조건을 구분하지 않고 모두 WHERE 절에 작성
+e.g) SELECT * FROM 테이블A, 테이블B
+     WHERE 조인 조건 및 기타 조건;
+
+# FULL OUTER JOIN
+- LEFT OUTER JOIN + RIGHT OUTER JOIN
+- MySQL은 미지원. 대신 UNION 집합 연산자를 사용하여 동일한 결과를 얻을 수 있다.
