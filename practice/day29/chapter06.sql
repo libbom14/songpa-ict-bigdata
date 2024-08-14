@@ -44,6 +44,12 @@ WHERE 고객번호 IN (SELECT 고객번호
                FROM 고객
                WHERE 도시 = '부산광역시');
 
+/*SCOTT에 응용*/
+SELECT *
+FROM scott.EMP E
+WHERE (DEPTNO, SAL) IN (SELECT DEPTNO, MAX(SAL) FROM scott.EMP GROUP BY DEPTNO);
+;
+
 /*예제6-5*/
 -- ANY : 다중 행 연산자. 조건을 만족하는 값이 하나라도 있다면 결과를 리턴
 -- 즉 부산광역시 데이터중 가장 작은 마일리지 806 보다 큰 데이터가 리턴

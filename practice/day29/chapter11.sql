@@ -145,7 +145,13 @@ FROM 한빛무역.고객
 WHERE 도시 = '부산광역시';
 
 /*SCOTT에 응용*/
-SELECT ;
+SELECT E.ENAME                                             사원명
+     , E.JOB
+     ,LAST_VALUE(E.ENAME) over (PARTITION BY E.DEPTNO ORDER BY E.SAL)
+     ,LAST_VALUE(E.JOB) over (PARTITION BY E.DEPTNO ORDER BY E.SAL
+        ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) AS XXX
+FROM scott.EMP E;
+
 
 /*예제11-14*/
 SELECT LAG(고객번호) OVER (ORDER BY 고객번호)  AS 이전행고객번호
