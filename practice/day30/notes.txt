@@ -1,0 +1,39 @@
+8/14
+
+## DML - Data Manipulation Language
+- Add new row(s)
+INSERT INFO VALUES
+- Modify existing rows
+UPDATE
+- Remove existing rows
+DELETE
+
+* DML 전 autocommit FALSE
+select @@autocommit;
+set autocommit = FALSE;     -- 0
+set autocommit = TRUE;      -- 1
+* desc 테이블명;    -- DML 전 TABLE description을 통해 PK, FK 확인
+
+▣ 참조무결성 제약(ON DELETE RESTRICT, ON UPDATE CASCADE)
+외래키 옵션
+1. ON DELETE
+- CASCADE : 부모 데이터 삭제 시 자식 데이터도 삭제
+- SET NULL : 부모 데이터 삭제 시 자식 테이블의 참조 컬럼을 NULL로 업데이트
+- SET DEFAULT : 부모 데이터 삭제 시 자식 테이블의 참조 컬럼을 Default 값으로 업데이트
+- RESTRICT : 자식 테이블이 참조하고 있을 경우, 데이터 삭제 불가
+- NO ACTION : RESTRICT 동일, 옵션을 지정하지 않았을 경우 자동으로 선택된다.
+
+2) On Update
+- CASCADE : 부모 데이터 업데이트 시 자식 데이터도 업데이트
+- SET NULL : 부모 데이터 업데이트 시 자식 테이블의 참조 컬럼을 NULL로 업데이트
+- SET DEFAULT : 부모 데이터 업데이트 시 자식 테이블의 참조 컬럼을 Default 값으로 업데이트
+- RESTRICT : 자식 테이블이 참조하고 있을 경우, 업데이트 불가
+- NO ACTION : RESTRICT 동일, 옵션을 지정하지 않았을 경우 자동으로 선택된다.
+
+# ==================================================
+
+## 공공데이터
+CREATE SCHEMA 서울지하철 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+
+
+mysql -u user01 -p
